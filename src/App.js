@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import data from './partners.json';
@@ -8,10 +8,6 @@ function App() {
     const {greatCircleDistance} = require("great-circle-distance");
     const [limit, setLimit] = useState('99999999');
 
-
-    useEffect(() => {
-        getDistanse("-33.8934219", "151.20404600000006");
-    }, []);
 
     function getDistanse(num) {
         num = num.split(',');
@@ -77,9 +73,9 @@ function App() {
     })
 
     function handleChange(event) {
-        if(event.target.value == ''){
+        if (event.target.value == '') {
             setLimit('99999')
-        }else {
+        } else {
             setLimit(event.target.value)
 
         }
